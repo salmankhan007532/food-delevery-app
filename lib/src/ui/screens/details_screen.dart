@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_delevry_app/src/ui/widgets/IngredientesContainer.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key});
@@ -36,7 +39,7 @@ class _DetailScreenState extends State<DetailScreen> {
           Positioned(
                 bottom: 0,
                 child: Container(
-                  height: 440.sp,
+                  height: 460.sp,
                   width: 414.sp,
                   decoration:   BoxDecoration(
                color: Colors.white,
@@ -48,8 +51,9 @@ class _DetailScreenState extends State<DetailScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        SizedBox(height: 15.sp,),
                         const Text("Descripción",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800),),
-                        SizedBox(height: 5.sp,),
+                        SizedBox(height: 15.sp,),
                         SizedBox(
                           height:58.sp ,
                           width: 323.sp,
@@ -60,23 +64,63 @@ class _DetailScreenState extends State<DetailScreen> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 5.sp,),
+                        SizedBox(height: 15.sp,),
                         const Text("Ingredientes",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800),),
-                        SizedBox(height: 5.sp,),
-                        Container(
+                        SizedBox(height: 15.sp,),
+                        SizedBox(
+                          //color: Colors.amber,
                           height: 169.sp,
                           width: 414.sp,
                           child: ListView(
                             scrollDirection: Axis.horizontal,
-                            children: [
+                            children:  [
+                              IngredientesContainer(image: "111.png",title: "Arrachera",),
+                              const SizedBox(width: 8,),
+                              IngredientesContainer(image: "112.png",title: "Pan ajonjoli",),
+                              const SizedBox(width: 8,),
+                              IngredientesContainer(image: "113.png",title: "Lechuga",),
+                              const SizedBox(width: 8,),
+                              IngredientesContainer(image: "114.png",title: "Cebolla",),
 
                             ],
                           ),
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Container(
+                              height: 63.sp,
+                              width: 210.sp,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: const LinearGradient(
+                                            begin: Alignment.topRight,
+                                            end: Alignment.bottomLeft,
+                                            colors: [
+                                              Color(0xFF2EC8C1),
+                                              Color(0xFF4A1192),
+                                              
+                                            ],
+                                          )
+                              ),
+                              child: const Center(child: Text("Ordenar ahora",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800,color: Colors.white),)),
+                            ),
+                            const Text("1220 PKR",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800,color: Color(0xFF153E73)),),
+                          ],
+                        )
                       ],
                     ),
                   ),
                 )),
+                Positioned(
+                  top: 315.sp,
+                  right: 40.sp,
+                  child: const CircleAvatar(
+                    backgroundColor: Color(0xFFF1395E),
+                    radius: 20,
+                    child: Icon(Icons.favorite_outline,size: 25,color: Colors.white,),
+                  ),
+                )
                  
             ],)
         ),

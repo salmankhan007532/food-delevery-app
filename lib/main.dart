@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_delevry_app/src/ui/screens/carrito_screen.dart';
 import 'package:food_delevry_app/src/ui/screens/details_screen.dart';
 import 'package:food_delevry_app/src/ui/screens/home_screen.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home:  const DetailScreen(),
+          home:  const CarritoScreen(),
         ),
       );
   }
