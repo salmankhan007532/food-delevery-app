@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_delevry_app/src/ui/screens/carrito_screen.dart';
 import 'package:food_delevry_app/src/ui/widgets/IngredientesContainer.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -88,22 +89,27 @@ class _DetailScreenState extends State<DetailScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Container(
-                              height: 63.sp,
-                              width: 210.sp,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                gradient: const LinearGradient(
-                                            begin: Alignment.topRight,
-                                            end: Alignment.bottomLeft,
-                                            colors: [
-                                              Color(0xFF2EC8C1),
-                                              Color(0xFF4A1192),
-                                              
-                                            ],
-                                          )
+                            InkWell(
+                              onTap: () {
+                                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const CarritoScreen()));
+                              },
+                              child: Container(
+                                height: 63.sp,
+                                width: 210.sp,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  gradient: const LinearGradient(
+                                              begin: Alignment.topRight,
+                                              end: Alignment.bottomLeft,
+                                              colors: [
+                                                Color(0xFF2EC8C1),
+                                                Color(0xFF4A1192),
+                                                
+                                              ],
+                                            )
+                                ),
+                                child: const Center(child: Text("Order now",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800,color: Colors.white),)),
                               ),
-                              child: const Center(child: Text("Ordenar ahora",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800,color: Colors.white),)),
                             ),
                             const Text("1220 PKR",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800,color: Color(0xFF153E73)),),
                           ],

@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    const Text("Inicio",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w800,color: Color(0xFF5117AC)),),
+                    const Text("Start",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w800,color: Color(0xFF5117AC)),),
                     SizedBox(width: 14.sp,),
                     const Icon(Icons.notifications_outlined,size: 30,color: Colors.blue,),
                     const Icon(Icons.settings,size: 30,color: Colors.blue,),
